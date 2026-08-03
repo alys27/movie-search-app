@@ -1,5 +1,5 @@
 function Pagination({ page, totalResults, onPageChange }) {
-  const totalPages = Math.ceil(totalResults / 10); // OMDb hər səhifədə 10 nəticə qaytarır
+  const totalPages = Math.ceil(totalResults / 10); 
 
   const handlePrev = () => {
     if (page > 1) onPageChange(page - 1);
