@@ -26,10 +26,12 @@ function App() {
       <h1>Film Axtarışı</h1>
       <SearchBar onSearch={setQuery} />
 
-      {loading && <p>Yüklənir...</p>}
-      {error && <p className="error">{error}</p>}
+      {loading && <p className="status-message loading">Yüklənir...</p>}
+      {!loading && error && (
+        <p className="status-message error">Xəta: {error}</p>
+      )}
       {!loading && !error && debouncedQuery && movies.length === 0 && (
-        <p>Nəticə tapılmadı.</p>
+        <p className="status-message empty">"{debouncedQuery}" üçün nəticə tapılmadı.</p>
       )}
 
       <ResultsList movies={movies} />
