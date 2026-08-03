@@ -22,8 +22,11 @@ function App() {
   const { movies, totalResults, loading, error } = useMovies(debouncedQuery, page);
 
   return (
+    <>
+    <div className="stars-bg"></div>
     <div className="app">
       <h1>Film Axtarışı</h1>
+      <p className="subtitle">Sevdiyiniz filmi tapın</p>
       <SearchBar onSearch={setQuery} />
 
       {loading && <p className="status-message loading">Yüklənir...</p>}
@@ -44,6 +47,7 @@ function App() {
         />
       )}
     </div>
+  </>
   );
 }
 
